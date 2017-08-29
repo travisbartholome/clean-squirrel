@@ -1,6 +1,18 @@
 @echo off
 echo.
 
+:: Check administrative privileges
+echo Checking for administrative privileges...
+net session >nul 2>&1
+if %errorLevel% == 0 (
+  echo Success: Administrative privileges available.
+  echo.
+) else (
+  echo Error: cleansquirrel requires administrative privileges.
+  echo Please run using Command Prompt as Admin.
+  exit /B 1
+)
+
 :: Exit with error if no arguments
 if "%~1"=="" (
   echo Error: cleansquirrel requires arguments.
