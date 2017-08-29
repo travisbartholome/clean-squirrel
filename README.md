@@ -6,9 +6,9 @@ out of your AppData folders and into some other location
 (like a different drive).
 
 This should be helpful if you have limited space
-on your C: drive and want to avoid the clutter
+on your C:\ drive and want to avoid the clutter
 that comes due to installers like Squirrel
-(which installs entire programs into AppData by default).
+(which installs entire programs into AppData).
 
 It creates symlinks to avoid breaking anything in the software
 that uses resources from AppData.
@@ -21,15 +21,14 @@ because it creates symbolic links. Press Win+X and select
 
 -----
 
-This script won't purge any files in the directories
-to which you move your files. However, it **will**
-overwrite any files that have conflicting names.
+This script won't purge any files in the target directory.
+However, it **will** overwrite any files that have conflicting names.
 
-This shouldn't be possible unless you specify the
-install location to be a directory that already has
+This problem shouldn't occur unless you specify the
+install location as a directory that already has
 a subdirectory named `Local` or `Roaming`.
 
-However, for safety, check the contents of your
+For safety, check the contents of your
 target directory before running the script.
 
 ## Example
@@ -39,8 +38,8 @@ target directory before running the script.
 Yep, that's it.
 
 This will move the files from %appdata%\Atom
-and %LocalAppData%\Atom to \Roaming\ and \Local\
-subdirectories within D:\Programs\Atom, respectively.
+and %LocalAppData%\Atom to D:\Programs\Atom\Roaming
+and D:\Programs\Atom\Local, respectively.
 
 ### Better docs
 
@@ -52,7 +51,6 @@ in the terminal, ignoring any other arguments.
 The `ProgramDirName` argument should be exactly the
 same as the name of the folder in your AppData
 that you want to move.
-
 For example, if you have Discord
 installed in `C:\Users\YourName\AppData\Roaming\discord`,
 you would want the value of `ProgramDirName` to be `discord`.
